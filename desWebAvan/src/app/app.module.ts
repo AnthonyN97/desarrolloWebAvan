@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TrabajadorComponent } from './trabajador/trabajador.component';
+import { DadoComponent } from './dado/dado.component';
+import { CronometroComponent } from './cronometro/cronometro.component';
+import { SelectornumericoComponent } from './selectornumerico/selectornumerico.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrabajadorComponent
+    DadoComponent,
+    CronometroComponent,
+    SelectornumericoComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
