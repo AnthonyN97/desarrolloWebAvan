@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DadoComponent } from './dado.component';
+import { HijoComponent } from './hijo.component';
 
-describe('DadoComponent', () => {
-  let component: DadoComponent;
-  let fixture: ComponentFixture<DadoComponent>;
+describe('HijoComponent', () => {
+  let component: HijoComponent;
+  let fixture: ComponentFixture<HijoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DadoComponent ]
+      declarations: [ HijoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DadoComponent);
+    fixture = TestBed.createComponent(HijoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

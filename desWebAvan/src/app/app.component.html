@@ -1,32 +1,25 @@
-<div>
-  <div class="container">
+<div class="container">
+  <div class="col" style="text-align: center;"><h1>{{title}}</h1>
+    <br><br>
+    <form class="form-group row">
+      <div class="form-group col-md-3">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form control" [(ngModel)]="cuadroNombre">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" id="precio" placeholder="Precio" class="form control" [(ngModel)]="cuadroPrecio">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="categoria">Categoria:</label>
+        <input type="text" name="categoria" id="categoria" placeholder="Categoria" class="form control" [(ngModel)]="cuadroCategoria">
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary" (click)="agregarProducto()" style="margin-top: 35px;">Agregar</button>  
+      </div>
+    </form>
   </div>
-  <div>
-    <div style="text-align:center">
-      <app-dado [valor]="valor1"></app-dado>
-      <app-dado [valor]="valor2"></app-dado>
-      <app-dado [valor]="valor3"></app-dado>
-      <hr>
-      <button (click)="tirar()">Tirar</button>
-      <hr>
-      <p>Resultado:{{resultado}}</p>
-  </div>
-  <br>
-  </div>
-  <div style="text-align:center">
-    <h1>Prueba de la componente cronometro</h1>
-    <app-cronometro [inicio]="15" (multiplo10)="actualizar($event)"></app-cronometro>
-    <h2>Evento</h2>
-    <h3>{{mensaje}}</h3>
-  </div>
-  <br>
-  <div class="main">
-    <app-selectornumerico [minimo]="1" [maximo]="10" #selector1></app-selectornumerico>
-    <br>
-    <button (click)="fijarSelector1(1)">Fijar en 1</button><br>
-    <button (click)="fijarSelector1(5)">Fijar en 5</button><br>
-    <button (click)="fijarSelector1(10)">Fijar en 10</button>
+  <br><br><br>
 
-  </div>
-
+  <app-hijo *ngFor="let producto of productos; let i=index" [productoDeLista]="producto" [indice]="i"></app-hijo>
 </div>
