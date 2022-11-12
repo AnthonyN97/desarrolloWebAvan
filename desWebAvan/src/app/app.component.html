@@ -1,25 +1,44 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://img.freepik.com/vector-premium/icono-tienda_24911-1362.jpg?w=2000" alt="Logo" width="40"
+        height="30" class="d-inline-block align-text-top">
+      {{title}}
+    </a>
+  </div>
+</nav>
 <div class="container">
-  <div class="col" style="text-align: center;"><h1>{{title}}</h1>
+  <div class="col" style="text-align: center;">
+
     <br><br>
     <form class="form-group row">
-      <div class="form-group col-md-3">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form control" [(ngModel)]="cuadroNombre">
+      <div class="input-group mb-3">
+        <span class="input-group-text">Nombre:</span>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control"
+          [(ngModel)]="cuadroNombre">
+        <span class="input-group-text">Precio:</span>
+        <input type="number" name="precio" id="precio" placeholder="Precio" class="form-control"
+          [(ngModel)]="cuadroPrecio">
+        <span class="input-group-text">Categoria:</span>
+        <select class="form-select" size="1" aria-label="size 3 select example" name="categoria" id="categoria"
+          placeholder="Categoria" [(ngModel)]="cuadroCategoria">
+          <option value="Bebidas">Bebidas</option>
+          <option value="Golosinas">Golosinas</option>
+          <option value="Frituras">Frituras</option>
+          <option value="Lacteos">Lacteos</option>
+          <option value="Frituras">Frituras</option>
+        </select>
       </div>
-      <div class="form-group col-md-3">
-        <label for="precio">Precio:</label>
-        <input type="number" name="precio" id="precio" placeholder="Precio" class="form control" [(ngModel)]="cuadroPrecio">
-      </div>
-      <div class="form-group col-md-3">
-        <label for="categoria">Categoria:</label>
-        <input type="text" name="categoria" id="categoria" placeholder="Categoria" class="form control" [(ngModel)]="cuadroCategoria">
-      </div>
-      <div class="col">
-        <button type="submit" class="btn btn-primary" (click)="agregarProducto()" style="margin-top: 35px;">Agregar</button>  
+      <div class="container center">
+        <button type="submit" class="btn btn-primary mb-3" (click)="agregarProducto()">Agregar Producto</button>
       </div>
     </form>
   </div>
+
+  <br><br><br>
+  <div class="container-center">
+    <app-hijo *ngFor="let producto of productos; let i=index" [productoDeLista]="producto" [indice]="i"></app-hijo>
+  </div>
   <br><br><br>
 
-  <app-hijo *ngFor="let producto of productos; let i=index" [productoDeLista]="producto" [indice]="i"></app-hijo>
 </div>

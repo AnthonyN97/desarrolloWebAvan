@@ -1,9 +1,6 @@
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div>
-                {{indice+1}} : {{productoDeLista.nombre}} {{productoDeLista.precio}} {{productoDeLista.categoria}}
-            </div>
-        </div>
-    </div>
-</div>
+<ul class="list-group list-group-horizontal">
+    <li class="list-group-item">ID: {{indice+1}}</li>
+    <li class="list-group-item">Nombre: {{productoDeLista.nombre}}</li>
+    <li class="list-group-item">Precio: S/. {{productoDeLista.precio}}</li>
+    <li class="list-group-item">Categoria: {{productoDeLista.categoria}}</li>
+</ul>

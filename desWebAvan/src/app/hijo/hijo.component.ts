@@ -14,6 +14,7 @@ export class HijoComponent implements OnInit {
 
   constructor() { }
 
+  
   ngOnInit(): void {
   }
 
